@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import axios from 'axios';
+import React,{useState} from 'react';
+
+import CityInfoContainer from "./Components/CityInfoContainer";
+import HeaderPage from "./Components/HeaderPage";
 
 function App() {
+
+  const [city,setCity] = useState();
+  const [loading, setLoading] = useState(false);
+
+  const searchCity = (name) => {
+    setLoading(true);
+    axios.get(`https://api.hgbrasil.com/weather?format=json-cors&key=2792ae00&city_name=${name}`)
+      .then(res => {
+        setCity(res.data.results);
+        setLoading(false);
+      }).catch(()=> {
+        setCity();
+        setLoading(false);
+        alert('Cidade não encontrada');
+      })
+      setLoading(false);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <HeaderPage searchCity={searchCity} />
+      {
+        loading ? <p>Carregando...</p> : (
+          city ?  <CityInfoContainer city={city} /> : null
+        )
+       
+      }
+     
+    </>
   );
 }
 

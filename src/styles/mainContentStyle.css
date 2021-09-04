@@ -1,0 +1,49 @@
+main {
+    display: flex;
+    justify-content: center;
+    height: 70vh;
+}
+
+.info-section {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    padding: 1.2rem;
+}
+
+.textual-weather {
+    align-self: center;
+    font-size: 1.2rem;
+}
+
+.main-temp {
+    align-self: center;
+    font-size: 2.4rem;
+    font-weight: bold;
+}
+
+.name-city {
+    align-self: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.max-min-temp-container {
+    display: flex;
+    border-top: 1px solid lightseagreen;
+    justify-content: space-evenly;
+}
+
+.temp {
+    padding: 0 1rem;
+}
+
+.temp > p:first-child {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.temp > p {
+    
+    font-weight: normal;
+}

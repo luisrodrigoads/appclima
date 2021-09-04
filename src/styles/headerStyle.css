@@ -1,0 +1,47 @@
+.header-page {
+    padding: 1.2rem;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid lightseagreen;
+}
+
+.content-header {
+    display: flex;
+    width: 40vw;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.content-header > p {
+    align-self: center;
+    color: blue;
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+}
+
+.input-container > input {
+    font-size: 1rem;
+    margin-right: 0.5rem;
+}
+
+.input-container > button {
+    font-size: 1rem;
+    color: white;
+    background-color: lightseagreen;
+    padding: 0.4rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+}
+
+.input-container > button:hover {
+    filter: brightness(110%);
+    cursor: pointer;
+}
+
